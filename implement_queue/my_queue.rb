@@ -6,13 +6,7 @@ class MyQueue
     @queue = []
   end
 
-  def enqueue(*values)
-    values.each{ |v| @queue << v }
-  end
-
-  def dequeue
-    @queue.shift
-  end
-
+  def_delegator(:@queue, :push, :enqueue)
+  def_delegator(:@queue, :shift, :dequeue)
   def_delegators(:@queue, :first, :last, :size, :clear)
 end
