@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'my_forwardable'
 
 class Foo
-  extend MyForwadable
+  extend MyForwardable
 
   attr_reader :internal
   def initialize
@@ -13,7 +13,7 @@ class Foo
   def_delegators :@internal, :push, :clear
 end
 
-class MyForwadableTest < MiniTest::Test
+class MyForwardableTest < MiniTest::Test
   def setup
     @foo = Foo.new
   end
