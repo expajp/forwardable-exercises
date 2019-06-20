@@ -14,9 +14,5 @@ class MyQueue
     @queue.shift
   end
 
-  def clear
-    @queue = []
-  end
-
-  def_delegators(:@queue, :first, :last, :size)
+  def_delegators(:@queue, :first, :last, :size, :clear)
 end
